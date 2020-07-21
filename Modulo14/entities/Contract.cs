@@ -10,7 +10,7 @@ namespace Modulo14.entities
         public DateTime Date { get; set; }
         public double TotalValue { get; set; }
 
-        public List<Installment> Installments { get; set; }
+        public List<Installment> Installments { get; private set; }
 
         public Contract()
         {
@@ -29,6 +29,11 @@ namespace Modulo14.entities
             Date = date;
             TotalValue = totalValue;
             Installments = installments;
+        }
+
+        public void AddInstallment(Installment installment)
+        {
+            Installments.Add(installment);
         }
     }
 }

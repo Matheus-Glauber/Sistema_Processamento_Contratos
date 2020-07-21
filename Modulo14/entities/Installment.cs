@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace Modulo14.entities
@@ -17,6 +18,13 @@ namespace Modulo14.entities
         {
             DueDate = dueDate;
             Amount = amount;
+        }
+
+        public override string ToString()
+        {
+            return DueDate.Date
+                   + " - "
+                   + Amount.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }
